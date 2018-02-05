@@ -105,8 +105,8 @@ fi
 DATA="/opt/app-root/lounge/"
 mkdir -p ${DATA}
 chown -R 0:0 ${DATA}
-#chgrp -R 0 ${DATA}
-#chmod -R g=u ${DATA}
+chgrp -R 0 ${DATA}
+chmod -R g=u ${DATA} /etc/passwd
 
 # Fix source directory permissions
 fix-permissions ./
