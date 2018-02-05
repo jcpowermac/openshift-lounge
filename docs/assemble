@@ -102,5 +102,10 @@ else
 
 fi
 
+DATA="/var/opt/app-root/lounge/"
+mkdir -p ${DATA}
+chgrp -R 0 ${DATA}
+chmod -R g=u ${DATA}
+
 # Fix source directory permissions
 fix-permissions ./
