@@ -14,7 +14,7 @@ RUN mkdir -p ${THELOUNGE_HOME} && \
     chgrp -R 0 ${APP_ROOT} && \
     chmod -R g=u ${APP_ROOT} /etc/passwd
 
-RUN timeout 10 thelounge start
+RUN timeout 10 thelounge start || true
 
 USER 10001
 WORKDIR ${APP_ROOT}
