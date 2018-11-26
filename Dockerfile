@@ -10,11 +10,10 @@ ENV THELOUNGE_HOME=${APP_ROOT}/etc/thelounge
 ENV PATH=${APP_ROOT}/bin:${PATH} HOME=${APP_ROOT}
 COPY bin/ ${APP_ROOT}/bin/
 RUN mkdir -p ${THELOUNGE_HOME} && \
+    timeout 10 thelounge start || true && \
     chmod -R u+x ${APP_ROOT}/bin && \
     chgrp -R 0 ${APP_ROOT} && \
     chmod -R g=u ${APP_ROOT} /etc/passwd
-
-RUN timeout 10 thelounge start || true
 
 USER 10001
 WORKDIR ${APP_ROOT}
