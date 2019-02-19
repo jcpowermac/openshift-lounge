@@ -3,7 +3,7 @@ FROM registry.fedoraproject.org/fedora:29
 EXPOSE 9000
 
 RUN dnf install nodejs-yarn -y && \
-    yarnpkg global add thelounge@next
+    yarnpkg global add thelounge
 
 ENV APP_ROOT=/opt/app-root
 ENV THELOUNGE_HOME=${APP_ROOT}/etc/thelounge
